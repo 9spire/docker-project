@@ -1,7 +1,3 @@
-# docker-compose up -d website selenium
-# Set up VNC in terminal, open vnc://localhost:5901
-# vnc://localhost:5901 "secret"
-# docker-compose run --rm unit-tests
 require 'capybara'
 require 'capybara/dsl'
 require 'selenium-webdriver'

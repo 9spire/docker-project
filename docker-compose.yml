@@ -1,5 +1,15 @@
 version: '3.9'
 services: 
+    aws:
+        image: organs/awscli
+        environment: 
+            AWS_ACCESS_KEY_ID: ${AWS_A_K_ID}
+            AWS_SECRET_ACCESS_KEY: ${AWS_S_A_K}
+            AWS_REGION: us-west-2
+            AWS_DEFAULT_REGION: us-west-2
+        volumes:
+            - $PWD:/app
+        working_dir: /app
     terraform:
         build:
             context: .
