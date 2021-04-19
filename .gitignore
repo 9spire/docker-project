@@ -1,6 +1,7 @@
 node_modules
 .env
 .env-notes
+jenkins_home
 
 # Compiled files
 *.tfstate
