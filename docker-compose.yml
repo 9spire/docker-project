@@ -32,6 +32,19 @@ services:
         ports:
             - 4444:4444
             - 5901:5900 #vnc server
+    integration-tests:
+        environment:
+            SELENIUM_HOST: selenium
+            SELENIUM_PORT: 4444
+        volumes:
+            - $PWD:/app
+        build:
+            context: .
+            dockerfile: rspec.dockerfile
+        entrypoint: rspec
+        command: 
+            - --pattern
+            - /app/spec/integration/*_spec.rb
     unit-tests:
         environment:
             SELENIUM_HOST: selenium
